@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href= "IMG/logo/app icon home.png" type="logo"> 
+    <style>
+      /* General styling */
+body {
+    font-family: 'JetBrains Mono';
+    background-color: #A0153E;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    width: 300px;
+    background-color: #A0153E;
+    padding: 80px;
+    border-radius: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 55%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Text input styling */
+.textb {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 92%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+}
+
+.placeholder {
+    width: 100%;
+    position: fixe;
+    color: white;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+
+/* log in style button */
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00224D;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+
+/* create account button style */
+a { 
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding for button */
+    font-size: 16px; /* Font size */
+    color: #fff; /* Text color */
+    background-color: #00224D; /* Background color */
+    border: none; /* No border */
+    border-radius: 14px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-sizing: border-box; /* Box-sizing property */
+    text-decoration: none; /* No text decoration for link */
+    display: block; /* Block display */
+    text-align: center; /* Center text alignment */
+    margin-bottom: 10px; /* Margin at the bottom */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Eye icon for password visibility */
+.show-password {
+    position: absolute;
+    top: 34%; /* adjust nimo aha dapita ang mata */
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <form action="index.html" class="login-form">
+        <div class="logo">
+            <img src="officiallogo.svg" alt="logo">
+        </div>
+
+        <div class="textb">
+            <input type="text" required>
+            <div class="placeholder">Username</div>
+        </div>
+
+        <div class="textb">
+            <input type="password" required>
+            <div class="placeholder">Password</div>
+            <div class="show-password fas fa-eye-slash"></div>
+        </div>
+
+        <a href="#">Create Account</a>
+        
+        <button class="btn">Login</button>
+
+    </form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    // Toggle password visibility
+    const togglePassword = document.querySelector('.show-password');
+    const passwordInput = document.querySelector('input[type="password"]');
+    
+    togglePassword.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        togglePassword.classList.toggle('fa-eye-slash');
+        togglePassword.classList.toggle('fa-eye');
+    });
+});
+
+</script>
+</body>
+</html>
